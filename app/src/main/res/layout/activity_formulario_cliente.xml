@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:scrollbars="vertical"
+    tools:context=".activities.FormularioCriptomoedaActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/editTextCodigo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Código:"
+                android:inputType="textCapCharacters"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editTextNome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Nome:"
+                android:inputType="textPersonName"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editTextCpf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="CPF:"
+                android:inputType="number"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editTextRg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="RG:"
+                android:inputType="number|text"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editTextDtNascimento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Data Nascimento:"
+                android:inputType="date"
+                android:textStyle="bold" />
+
+
+            <EditText
+                android:id="@+id/editTextEndereco"
+                android:layout_width="match_parent"
+                android:layout_height="88dp"
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="Endereço:"
+                android:inputType="textMultiLine"
+                android:overScrollMode="always"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editTextEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="Email:"
+                android:inputType="textWebEmailAddress"
+                android:overScrollMode="always"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editTextEstadoCivil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="Estado Civil:"
+                android:inputType="textWebEmailAddress"
+                android:overScrollMode="always"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editTextSexo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="Sexo:"
+                android:inputType="text"
+                android:overScrollMode="always"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editTextRenda"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="Renda:"
+                android:inputType="numberDecimal"
+                android:overScrollMode="always"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/buttonSalvar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Salvar" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
