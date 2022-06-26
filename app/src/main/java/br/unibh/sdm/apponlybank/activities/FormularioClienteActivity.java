@@ -54,7 +54,6 @@ public class FormularioClienteActivity extends AppCompatActivity {
             nome.setText(objeto.getNome());
             cpf.setText(objeto.getCpf());
             dtNascimento.setText(new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(objeto.getDtNascimento()));
-            //dtNascimento.setText(objeto.getDtNascimento());
             email.setText(objeto.getEmail());
             endereco.setText(objeto.getEndereco());
             estadoCivil.setText(objeto.getEstadoCivil());
