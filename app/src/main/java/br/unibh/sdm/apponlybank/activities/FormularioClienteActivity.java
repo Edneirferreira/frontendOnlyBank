@@ -13,6 +13,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.text.SimpleDateFormat;
+
 import br.unibh.sdm.apponlybank.R;
 import br.unibh.sdm.apponlybank.api.ClienteService;
 import br.unibh.sdm.apponlybank.api.RestServiceGenerator;
@@ -51,11 +53,12 @@ public class FormularioClienteActivity extends AppCompatActivity {
             codigo.setText(objeto.getId());
             nome.setText(objeto.getNome());
             cpf.setText(objeto.getCpf());
+            dtNascimento.setText(new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(objeto.getDtNascimento()));
             //dtNascimento.setText(objeto.getDtNascimento());
             email.setText(objeto.getEmail());
             endereco.setText(objeto.getEndereco());
             estadoCivil.setText(objeto.getEstadoCivil());
-            //renda.setText(objeto.getRenda());
+            renda.setText(objeto.getRenda().toString());
             rg.setText(objeto.getRg());
             sexo.setText(objeto.getSexo());
             codigo.setEnabled(false);
