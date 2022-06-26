@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:scrollbars="vertical"
-    tools:context=".activities.FormularioCriptomoedaActivity">
+    tools:context=".activities.FormularioClienteActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -16,15 +16,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical" >
-
-            <EditText
-                android:id="@+id/editTextCodigo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Código:"
-                android:inputType="textCapCharacters"
-                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/editTextNome"

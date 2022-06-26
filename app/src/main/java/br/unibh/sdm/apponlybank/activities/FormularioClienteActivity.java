@@ -40,7 +40,7 @@ public class FormularioClienteActivity extends AppCompatActivity {
         Intent intent = getIntent();
         if (intent.getSerializableExtra("objeto") != null) {
             Clientes objeto = (Clientes) intent.getSerializableExtra("objeto");
-            EditText codigo = findViewById(R.id.editTextCodigo);
+            //EditText codigo = findViewById(R.id.editTextCodigo);
             EditText nome = findViewById(R.id.editTextNome);
             EditText cpf = findViewById(R.id.editTextCpf);
             EditText dtNascimento = findViewById(R.id.editTextDtNascimento);
@@ -50,7 +50,7 @@ public class FormularioClienteActivity extends AppCompatActivity {
             EditText renda = findViewById(R.id.editTextRenda);
             EditText rg = findViewById(R.id.editTextRg);
             EditText sexo = findViewById(R.id.editTextSexo);
-            codigo.setText(objeto.getId());
+            //codigo.setText(objeto.getId());
             nome.setText(objeto.getNome());
             cpf.setText(objeto.getCpf());
             dtNascimento.setText(new SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(objeto.getDtNascimento()));
@@ -60,7 +60,7 @@ public class FormularioClienteActivity extends AppCompatActivity {
             renda.setText(objeto.getRenda().toString());
             rg.setText(objeto.getRg());
             sexo.setText(objeto.getSexo());
-            codigo.setEnabled(false);
+            //codigo.setEnabled(false);
             Button botaoSalvar = findViewById(R.id.buttonSalvar);
             botaoSalvar.setText("Atualizar");
         }
@@ -84,7 +84,7 @@ public class FormularioClienteActivity extends AppCompatActivity {
 
     private boolean validaFormulario(Clientes clientes){
         boolean valido = true;
-        EditText codigo = findViewById(R.id.editTextCodigo);
+        //EditText codigo = findViewById(R.id.editTextCodigo);
         EditText nome = findViewById(R.id.editTextNome);
         EditText cpf = findViewById(R.id.editTextCpf);
         EditText rg = findViewById(R.id.editTextRg);
@@ -94,12 +94,12 @@ public class FormularioClienteActivity extends AppCompatActivity {
         EditText estadoCivil = findViewById(R.id.editTextEstadoCivil);
         EditText sexo = findViewById(R.id.editTextSexo);
         EditText renda = findViewById(R.id.editTextRenda);
-        if (clientes.getId() == null || clientes.getId().trim().length() == 0){
-            codigo.getBackground().mutate().setColorFilter(getResources().getColor(android.R.color.holo_red_light), PorterDuff.Mode.SRC_ATOP);
-            valido = false;
-        } else {
-            codigo.getBackground().mutate().setColorFilter(getResources().getColor(android.R.color.holo_blue_dark), PorterDuff.Mode.SRC_ATOP);
-        }
+//        if (clientes.getId() == null || clientes.getId().trim().length() == 0){
+//            codigo.getBackground().mutate().setColorFilter(getResources().getColor(android.R.color.holo_red_light), PorterDuff.Mode.SRC_ATOP);
+//            valido = false;
+//        } else {
+//            codigo.getBackground().mutate().setColorFilter(getResources().getColor(android.R.color.holo_blue_dark), PorterDuff.Mode.SRC_ATOP);
+//        }
         if (clientes.getNome() == null || clientes.getNome().trim().length() == 0){
             nome.getBackground().mutate().setColorFilter(getResources().getColor(android.R.color.holo_red_light), PorterDuff.Mode.SRC_ATOP);
             valido = false;
@@ -147,6 +147,12 @@ public class FormularioClienteActivity extends AppCompatActivity {
             valido = false;
         } else {
             renda.getBackground().mutate().setColorFilter(getResources().getColor(android.R.color.holo_blue_dark), PorterDuff.Mode.SRC_ATOP);
+        }
+        if (clientes.getDtNascimento() == null || clientes.getDtNascimento().toString().length() == 0){
+            dtNascimento.getBackground().mutate().setColorFilter(getResources().getColor(android.R.color.holo_red_light), PorterDuff.Mode.SRC_ATOP);
+            valido = false;
+        } else {
+            dtNascimento.getBackground().mutate().setColorFilter(getResources().getColor(android.R.color.holo_blue_dark), PorterDuff.Mode.SRC_ATOP);
         }
         if (!valido){
             Log.e("FormularioCliente", "Favor verificar os campos destacados");
@@ -203,7 +209,7 @@ public class FormularioClienteActivity extends AppCompatActivity {
 
     @NotNull
     private Clientes recuperaInformacoesFormulario() {
-        EditText codigo = findViewById(R.id.editTextCodigo);
+//        EditText codigo = findViewById(R.id.editTextCodigo);
         EditText nome = findViewById(R.id.editTextNome);
         EditText cpf = findViewById(R.id.editTextCpf);
         EditText dtNascimento = findViewById(R.id.editTextDtNascimento);
@@ -214,13 +220,13 @@ public class FormularioClienteActivity extends AppCompatActivity {
         EditText rg = findViewById(R.id.editTextRg);
         EditText sexo = findViewById(R.id.editTextSexo);
         Clientes clientes = new Clientes();
-        clientes.setId(codigo.getText().toString());
+//        clientes.setId(codigo.getText().toString());
         clientes.setNome(nome.getText().toString());
         clientes.setCpf(cpf.getText().toString());
-      //  clientes.setDtNascimento(dtNascimento.getText().toString());
+        clientes.setdtNascimento(dtNascimento.getText());
         clientes.setEmail(email.getText().toString());
         clientes.setEndereco(endereco.getText().toString());
-      //  clientes.setRenda(renda.getText().toString()));
+        clientes.setRenda(Float.valueOf(renda.getText().toString()));
         clientes.setEstadoCivil(estadoCivil.getText().toString());
         clientes.setSexo(sexo.getText().toString());
         clientes.setRg(rg.getText().toString());

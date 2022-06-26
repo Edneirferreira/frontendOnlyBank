@@ -1,5 +1,7 @@
 package br.unibh.sdm.apponlybank.entidades;
 
+import android.text.Editable;
+
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
@@ -70,7 +72,7 @@ public class Clientes implements Serializable {
         this.cpf = cpf;
     }
 
-    public void setDtNascimento(Date dtNascimento) { this.dtNascimento = dtNascimento; }
+    public void setdtNascimento(Editable dtNascimento) { this.dtNascimento = (Date) dtNascimento; }
 
     public void setEmail(String email) { this.email = email; }
 
