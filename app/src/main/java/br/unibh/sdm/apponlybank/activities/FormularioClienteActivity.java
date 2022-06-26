@@ -86,7 +86,14 @@ public class FormularioClienteActivity extends AppCompatActivity {
         boolean valido = true;
         EditText codigo = findViewById(R.id.editTextCodigo);
         EditText nome = findViewById(R.id.editTextNome);
-        EditText descricao = findViewById(R.id.editTextEmail);
+        EditText cpf = findViewById(R.id.editTextCpf);
+        EditText rg = findViewById(R.id.editTextRg);
+        EditText dtNascimento = findViewById(R.id.editTextDtNascimento);
+        EditText endereco = findViewById(R.id.editTextEndereco);
+        EditText email = findViewById(R.id.editTextEmail);
+        EditText estadoCivil = findViewById(R.id.editTextEstadoCivil);
+        EditText sexo = findViewById(R.id.editTextSexo);
+        EditText renda = findViewById(R.id.editTextRenda);
         if (clientes.getId() == null || clientes.getId().trim().length() == 0){
             codigo.getBackground().mutate().setColorFilter(getResources().getColor(android.R.color.holo_red_light), PorterDuff.Mode.SRC_ATOP);
             valido = false;
@@ -100,40 +107,46 @@ public class FormularioClienteActivity extends AppCompatActivity {
             nome.getBackground().mutate().setColorFilter(getResources().getColor(android.R.color.holo_blue_dark), PorterDuff.Mode.SRC_ATOP);
         }
         if (clientes.getCpf() == null || clientes.getCpf().trim().length() == 0){
-            descricao.getBackground().mutate().setColorFilter(getResources().getColor(android.R.color.holo_red_light), PorterDuff.Mode.SRC_ATOP);
+            cpf.getBackground().mutate().setColorFilter(getResources().getColor(android.R.color.holo_red_light), PorterDuff.Mode.SRC_ATOP);
             valido = false;
         } else {
-            descricao.getBackground().mutate().setColorFilter(getResources().getColor(android.R.color.holo_blue_dark), PorterDuff.Mode.SRC_ATOP);
+            cpf.getBackground().mutate().setColorFilter(getResources().getColor(android.R.color.holo_blue_dark), PorterDuff.Mode.SRC_ATOP);
         }
         if (clientes.getEmail() == null || clientes.getEmail().trim().length() == 0){
-            descricao.getBackground().mutate().setColorFilter(getResources().getColor(android.R.color.holo_red_light), PorterDuff.Mode.SRC_ATOP);
+            email.getBackground().mutate().setColorFilter(getResources().getColor(android.R.color.holo_red_light), PorterDuff.Mode.SRC_ATOP);
             valido = false;
         } else {
-            descricao.getBackground().mutate().setColorFilter(getResources().getColor(android.R.color.holo_blue_dark), PorterDuff.Mode.SRC_ATOP);
+            email.getBackground().mutate().setColorFilter(getResources().getColor(android.R.color.holo_blue_dark), PorterDuff.Mode.SRC_ATOP);
         }
         if (clientes.getEndereco() == null || clientes.getEndereco().trim().length() == 0){
-            descricao.getBackground().mutate().setColorFilter(getResources().getColor(android.R.color.holo_red_light), PorterDuff.Mode.SRC_ATOP);
+            endereco.getBackground().mutate().setColorFilter(getResources().getColor(android.R.color.holo_red_light), PorterDuff.Mode.SRC_ATOP);
             valido = false;
         } else {
-            descricao.getBackground().mutate().setColorFilter(getResources().getColor(android.R.color.holo_blue_dark), PorterDuff.Mode.SRC_ATOP);
+            endereco.getBackground().mutate().setColorFilter(getResources().getColor(android.R.color.holo_blue_dark), PorterDuff.Mode.SRC_ATOP);
         }
         if (clientes.getEstadoCivil() == null || clientes.getEstadoCivil().trim().length() == 0){
-            descricao.getBackground().mutate().setColorFilter(getResources().getColor(android.R.color.holo_red_light), PorterDuff.Mode.SRC_ATOP);
+            estadoCivil.getBackground().mutate().setColorFilter(getResources().getColor(android.R.color.holo_red_light), PorterDuff.Mode.SRC_ATOP);
             valido = false;
         } else {
-            descricao.getBackground().mutate().setColorFilter(getResources().getColor(android.R.color.holo_blue_dark), PorterDuff.Mode.SRC_ATOP);
+            estadoCivil.getBackground().mutate().setColorFilter(getResources().getColor(android.R.color.holo_blue_dark), PorterDuff.Mode.SRC_ATOP);
         }
         if (clientes.getRg() == null || clientes.getRg().trim().length() == 0){
-            descricao.getBackground().mutate().setColorFilter(getResources().getColor(android.R.color.holo_red_light), PorterDuff.Mode.SRC_ATOP);
+            rg.getBackground().mutate().setColorFilter(getResources().getColor(android.R.color.holo_red_light), PorterDuff.Mode.SRC_ATOP);
             valido = false;
         } else {
-            descricao.getBackground().mutate().setColorFilter(getResources().getColor(android.R.color.holo_blue_dark), PorterDuff.Mode.SRC_ATOP);
+            rg.getBackground().mutate().setColorFilter(getResources().getColor(android.R.color.holo_blue_dark), PorterDuff.Mode.SRC_ATOP);
         }
         if (clientes.getSexo() == null || clientes.getSexo().trim().length() == 0){
-            descricao.getBackground().mutate().setColorFilter(getResources().getColor(android.R.color.holo_red_light), PorterDuff.Mode.SRC_ATOP);
+            sexo.getBackground().mutate().setColorFilter(getResources().getColor(android.R.color.holo_red_light), PorterDuff.Mode.SRC_ATOP);
             valido = false;
         } else {
-            descricao.getBackground().mutate().setColorFilter(getResources().getColor(android.R.color.holo_blue_dark), PorterDuff.Mode.SRC_ATOP);
+            sexo.getBackground().mutate().setColorFilter(getResources().getColor(android.R.color.holo_blue_dark), PorterDuff.Mode.SRC_ATOP);
+        }
+        if (clientes.getRenda() == null || !(clientes.getRenda() != 0)){
+            renda.getBackground().mutate().setColorFilter(getResources().getColor(android.R.color.holo_red_light), PorterDuff.Mode.SRC_ATOP);
+            valido = false;
+        } else {
+            renda.getBackground().mutate().setColorFilter(getResources().getColor(android.R.color.holo_blue_dark), PorterDuff.Mode.SRC_ATOP);
         }
         if (!valido){
             Log.e("FormularioCliente", "Favor verificar os campos destacados");
