@@ -2,6 +2,8 @@ package br.unibh.sdm.apponlybank.entidades;
 
 import android.text.Editable;
 
+import androidx.annotation.NonNull;
+
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
@@ -15,15 +17,16 @@ public class Clientes implements Serializable {
     private String email;
     private String endereco;
     private String estadoCivil;
-    private Float renda;
+    private float renda;
     private String rg;
     private String sexo;
+
+
 
     public Clientes() {
     }
 
-    public String getId() {
-        return id;
+    public String getId() { return id;
     }
 
     public String getNome() {
@@ -72,7 +75,7 @@ public class Clientes implements Serializable {
         this.cpf = cpf;
     }
 
-    public void setdtNascimento(Editable dtNascimento) { this.dtNascimento = (Date) dtNascimento; }
+    public void setDtNascimento(Editable dtNascimento) { this.dtNascimento = (Date) dtNascimento; }
 
     public void setEmail(String email) { this.email = email; }
 
@@ -86,6 +89,7 @@ public class Clientes implements Serializable {
 
     public void setSexo(String sexo) { this.sexo = sexo; }
 
+    @NonNull
     @Override
     public String toString() {
         return "Clientes{" +
@@ -106,8 +110,7 @@ public class Clientes implements Serializable {
         if (this == o) return true;
         if (!(o instanceof Clientes)) return false;
         Clientes that = (Clientes) o;
-        return Objects.equals(getId(), that.getId()) &&
-                Objects.equals(getNome(), that.getNome()) &&
+        return  Objects.equals(getNome(), that.getNome()) &&
                 Objects.equals(getCpf(), that.getCpf()) &&
                 Objects.equals(getDtNascimento(), that.getDtNascimento()) &&
                 Objects.equals(getEmail(), that.getEmail()) &&

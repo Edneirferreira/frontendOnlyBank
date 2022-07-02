@@ -223,7 +223,7 @@ public class FormularioClienteActivity extends AppCompatActivity {
 //        clientes.setId(codigo.getText().toString());
         clientes.setNome(nome.getText().toString());
         clientes.setCpf(cpf.getText().toString());
-        clientes.setdtNascimento(dtNascimento.getText());
+        clientes.setDtNascimento(dtNascimento.getText());
         clientes.setEmail(email.getText().toString());
         clientes.setEndereco(endereco.getText().toString());
         clientes.setRenda(Float.valueOf(renda.getText().toString()));

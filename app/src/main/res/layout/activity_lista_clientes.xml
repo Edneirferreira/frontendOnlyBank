@@ -9,6 +9,7 @@
     android:layout_alignParentBottom="true"
     android:focusable="auto"
     android:orientation="vertical"
+    android:backgroundTint="@color/OnlyBankBackGround"
     tools:context=".activities.ListaClienteActivity">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
